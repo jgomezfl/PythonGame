@@ -79,7 +79,10 @@ class Marciano(pygame.sprite.Sprite):
             self.speedx = 2
             self.speedy = 30
         self.rect.x += self.speedx
-        self.rect.y += self.speedy  
+        self.rect.y += self.speedy 
+        if self.rect.bottom > height:
+            self.rect.bottom = height
+            game_over = True
         
 class Bullet(pygame.sprite.Sprite):
     def __init__(self, x, y):
